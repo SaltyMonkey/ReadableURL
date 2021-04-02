@@ -1,6 +1,6 @@
 const adjectives = require('./words/adjective.json')
 const nouns = require('./words/nouns.json')
-
+const vowels = ['a', 'e', 'i', 'o', 'u'];
 /**
  * Initializes the object.
  * @param {boolean} [capitalize=true] - If set to true, returns string in CamelCase.
@@ -19,7 +19,6 @@ function readable(capitalize=true, wordCount=3, seperator='') {
   this.wordCount = wordCount;
   this.seperator = seperator
 
-  this.vowels = ['a', 'e', 'i', 'o', 'u'];
   this.adjectives = [...adjectives];
   this.nouns = [...nouns];
 }
@@ -60,7 +59,7 @@ readable.prototype.generate = function () {
       var firstLetter = wordsList[0][0];
       for(var i = 0; i < 5; i++)
       {
-        if (this.vowels[i] === firstLetter) {
+        if (vowels[i] === firstLetter) {
           isVowel = true;
           break;
         }
