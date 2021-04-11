@@ -29,7 +29,7 @@ function readable(capitalize=true, wordCount=3, seperator='') {
  * @returns {string[]} - The array with each word capitalized.
  */
 readable.prototype.convertToTitleCase = function (wordsList) {
-  for (var i = 0; i < wordsList.length; i++) {
+  for (var i = 1; i < wordsList.length; i++) {
     wordsList[i] = wordsList[i].charAt(0).toUpperCase() + wordsList[i].slice(1).toLowerCase();
   }
   return wordsList;
